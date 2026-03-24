@@ -2,7 +2,7 @@
 
 PDF 파일을 이미지 시퀀스로 변환하여 웹상에서 플립북 효과를 구현하고, 정적 사이트 **3D Virtual Bookshelf**에 자동으로 업데이트하는 프로젝트.
 
-**"pdf 파일 업로드 + 자동 업데이트"**자동화 과정을 통해 Full-stack Workflow 기초를 학습합니다.
+"pdf 파일 업로드 + 자동 업데이트" 자동화 과정을 통해 Full-stack Workflow 기초를 학습합니다.
 
 ```
 [PDF 업로드] → [GitHub Actions 자동 실행] → [이미지 변환 & books.json 갱신] → [GitHub Pages 배포]

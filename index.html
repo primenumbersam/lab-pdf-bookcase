@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Bookcase + Page Flip + PDF to Image</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <title>Flip PDF in 3D Bookcase</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header class="neo-header">
-        <h1>pdf 3D 책장</h1>
+        <h1>3D 책장에 꽂힌 Flip PDF</h1>
 
     </header>
 
@@ -18,9 +18,11 @@
 
         <section class="intro-section">
             <div class="neo-box description">
-                <h2>딸깍 집필</h2>
-                <p>아무말대잔치 PDF 형식 전자책</p>
-                성공팔이·동기부여 책 딸깍집필
+                <h2>반자동 집필은 알아서</h2>
+                <p>아무말대잔치 전자책 개요 (성공팔이·동기부여) <strong>삽입</strong><br>
+                    <code>GenAI</code> 이용한 md 파일 집필 + 커버 이미지 생성 <strong>딸깍</strong><br>
+                    md 파일에서 pdf 파일로 변환 <strong>자동</strong>
+                </p>
                 <div class="tags">
                     <span class="neo-tag">채찍피티</span>
                     <span class="neo-tag">잼미니</span>
@@ -30,15 +32,15 @@
 
 
             <div class="neo-box">
-                <h2>반자동 출간</h2>
+                <h2>딸깍 출간은 해줄께</h2>
                 <p>
-                    <strong>3D Virtual Bookshelf,</strong> showcasing static PDF documents
-                    converted into interactive flipbooks.
-                    Used <code>pdf2image</code> and <code>page-flip</code> library.
+                    <strong>Flip PDF + 3D Bookshelf,</strong> <br>PDF documents
+                    rendered directly in browser with virtualization.
+                    <br>Used <code>PDF.js</code> & <code>page-flip</code> library.
                 </p>
                 <div class="tags">
-                    <span class="neo-tag">Python</span>
-                    <span class="neo-tag">JS Flipbook</span>
+                    <span class="neo-tag">PDF.js</span>
+                    <span class="neo-tag">Client Virtualization</span>
                     <span class="neo-tag">CSS 3D</span>
                 </div>
             </div>
@@ -55,8 +57,8 @@
                 <div style="text-align: center; margin-bottom: 2rem;">
                     <h2
                         style="background: var(--primary-color); display: inline-block; padding: 0.5rem 1.5rem; border: 3px solid var(--border-color); box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--border-color);">
-                        📚 PDF 3D Bookcase</h2>
-                    <p style="font-weight: bold;">딸깍 생성된 Flip PDF 책장</p>
+                        📚 3D Bookcase</h2>
+                    <p style="font-weight: bold;">초경량 Flip PDF 3D Bookcase</p>
                 </div>
                 <!-- 3D Bookshelf background pattern moved here to keep it contained -->
                 <div class="bookshelf-container" style="border: none; background-color: transparent;">
@@ -75,7 +77,7 @@
         </p>
     </footer>
     <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
-    <script src="assets/script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

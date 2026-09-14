@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flipbook Viewer</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- PDF.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <!-- Page Flip Library -->
     <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
 </head>
@@ -14,8 +16,9 @@
     <a href="index.html" class="home-btn">← Back to Bookshelf</a>
 
     <div class="viewer-container">
-        <div id="book" class="flip-book">
-            <!-- Pages will be injected here by script.js -->
+        <div id="loading" class="viewer-loading">도서 로딩 중...</div>
+        <div id="book" class="flip-book" style="display: none;">
+            <!-- Virtualized page containers will be injected here -->
         </div>
 
         <div class="controls">
@@ -26,7 +29,7 @@
         </div>
     </div>
 
-    <script src="assets/script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

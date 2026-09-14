@@ -1,0 +1,23 @@
+[
+    {
+        "id": "백수가 노트북 하나로 월 1억",
+        "title": "백수가 노트북 하나로 월 1억",
+        "cover": "pdf/백수가 노트북 하나로 월 1억-cover.png",
+        "pdfUrl": "pdf/백수가 노트북 하나로 월 1억.pdf",
+        "pages": 7
+    },
+    {
+        "id": "부부의 세계 - 사랑 자유 불균",
+        "title": "부부의 세계   사랑 자유 불균",
+        "cover": "pdf/부부의 세계 - 사랑 자유 불균-cover.png",
+        "pdfUrl": "pdf/부부의 세계 - 사랑 자유 불균.pdf",
+        "pages": 3
+    },
+    {
+        "id": "욕설 분석",
+        "title": "욕설 분석",
+        "cover": "pdf/욕설 분석-cover.png",
+        "pdfUrl": "pdf/욕설 분석.pdf",
+        "pages": 13
+    }
+]

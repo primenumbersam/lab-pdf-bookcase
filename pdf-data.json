@@ -1,5 +1,12 @@
 [
     {
+        "id": "sample-wiki",
+        "title": "sample wiki",
+        "cover": "",
+        "pdfUrl": "pdf/sample-wiki.pdf",
+        "pages": 7
+    },
+    {
         "id": "백수가 노트북 하나로 월 1억",
         "title": "백수가 노트북 하나로 월 1억",
         "cover": "pdf/백수가 노트북 하나로 월 1억-cover.png",

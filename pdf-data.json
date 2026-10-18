@@ -1,30 +1,37 @@
 [
     {
-        "id": "sample-wiki",
-        "title": "sample wiki",
-        "cover": "",
-        "pdfUrl": "pdf/sample-wiki.pdf",
-        "pages": 7
+        "id": "성공포르노_자기계발서",
+        "title": "성공포르노_자기계발서",
+        "cover": "pdf/성공포르노_자기계발서.jpg",
+        "pdfUrl": "pdf/성공포르노_자기계발서.pdf",
+        "pages": 224
     },
     {
         "id": "백수가 노트북 하나로 월 1억",
         "title": "백수가 노트북 하나로 월 1억",
-        "cover": "pdf/백수가 노트북 하나로 월 1억-cover.png",
+        "cover": "",
         "pdfUrl": "pdf/백수가 노트북 하나로 월 1억.pdf",
         "pages": 7
     },
     {
         "id": "부부의 세계 - 사랑 자유 불균",
         "title": "부부의 세계   사랑 자유 불균",
-        "cover": "pdf/부부의 세계 - 사랑 자유 불균-cover.png",
+        "cover": "pdf/부부의 세계 - 사랑 자유 불균.jpg",
         "pdfUrl": "pdf/부부의 세계 - 사랑 자유 불균.pdf",
         "pages": 3
     },
     {
         "id": "욕설 분석",
         "title": "욕설 분석",
-        "cover": "pdf/욕설 분석-cover.png",
+        "cover": "pdf/욕설 분석.jpg",
         "pdfUrl": "pdf/욕설 분석.pdf",
         "pages": 13
+    },
+    {
+        "id": "sample-wiki",
+        "title": "sample wiki",
+        "cover": "pdf/sample-wiki.jpg",
+        "pdfUrl": "pdf/sample-wiki.pdf",
+        "pages": 7
     }
 ]

@@ -11,13 +11,15 @@ ref: [onlinebooks.co.kr](https://onlinebooks.co.kr/)
 ## 🛠 아키텍처 및 동작 원리
 
 ```
-[PDF 업로드 (pdf/)] ──push──▶ [GitHub Actions (초고속 메타데이터 추출)]
-                                        │
-                              [pdf-data.json 자동 갱신]
-                                        │
-                               [GitHub Pages 배포]
-                                        │
-                         [방문자 브라우저 (PDF.js 온디맨드 렌더링)]
+[GenAI 집필 (Markdown)] ──▶ [mdpress 자동 빌드] ──▶ [pdf/ 저장]
+                                                          │ push
+                                              [GitHub Actions 파이프라인]
+                                                          │
+                                                [pdf-data.json 자동 갱신]
+                                                          │
+                                                 [GitHub Pages 정적 배포]
+                                                          │
+                                           [방문자 브라우저 (PDF.js 온디맨드 렌더링)]
 ```
 
 - **클라이언트 렌더링**: 원본 PDF 파일을 브라우저가 직접 비동기 스트리밍 로드.
@@ -32,7 +34,8 @@ ref: [onlinebooks.co.kr](https://onlinebooks.co.kr/)
 lab-pdf-bookcase/
 ├── .github/workflows/
 │   └── pdf-data-process.yml  # [CI] pdf-data.json 자동 갱신 워크플로우
-├── pdf/                      # [Input] 원본 PDF 파일 및 표지 이미지(*-cover.png) 보관
+├── book-writing-mdpress/     # [Authoring] GenAI 프롬프트 + mdpress 롱폼 집필 예시 (단행본 규격)
+├── pdf/                      # [Input] 원본 PDF 파일 및 표지 이미지(.png/.jpg/.jpeg/.webp)
 ├── style.css                 # 3D Bookshelf 및 플립북 스타일 (Neo-Brutalism)
 ├── script.js                 # 책장 렌더링, PDF.js 가상화 및 PageFlip 제어
 ├── index.html                # 3D Virtual Bookshelf (메인 화면)
@@ -44,11 +47,27 @@ lab-pdf-bookcase/
 
 ---
 
+## ✍️ "딸깍" 집필 & 출간 워크플로
+
+본 프로젝트는 생성형 AI 기반 원고 작성부터 웹 3D 서가 출간까지 전 과정을 자동화한다.
+
+1. **초저가·초고속 "딸깍" 집필 (`book-writing-mdpress/`)**
+   - **기획 및 규칙 정의**: `idea.md`와 `rules-GEMINI.md`(네거티브 프롬프팅 및 분량 제약)를 기반으로 LLM이 세부 절 단위 집필.
+   - **mdpress 자동 빌드**: 작성된 Markdown 파일들을 Go 기반 `mdpress` 도구로 단행본 규격 PDF로 즉시 변환.
+   - **실제 집필 예시**: 약 12만 자/224페이지 분량의 `성공포르노_자기계발서.pdf` 수록.
+
+2. **무료·초경량 "딸깍" 출간 (`pdf/` & Web)**
+   - 빌드된 PDF 및 표지 이미지(`{도서명}.jpg|png`)를 `pdf/`에 배치.
+   - `python3 pdf-process.py`로 메타데이터(`pdf-data.json`) 갱신.
+   - 브라우저 접속 시 PDF.js와 st-page-flip으로 3D 책장 및 가상화 플립북 화면 렌더링.
+
+---
+
 ## 🚀 빠른 시작 가이드
 
 ### 1. 책 추가 방법
 1. `pdf/` 디렉토리에 원하는 PDF 파일(예: `sample.pdf`)을 추가한다.
-2. (선택) 동일한 이름으로 표지 이미지(예: `sample-cover.png`)를 넣으면 서가 표지로 사용된다.
+2. (선택) 동일한 이름으로 표지 이미지(예: `sample.jpg` 또는 `sample.png`)를 넣으면 서가 표지로 사용된다. 미등록 시 PDF 1페이지를 브라우저에서 자동 추출해 썸네일로 표시한다.
 3. 메타데이터 생성 스크립트를 실행한다.
    ```bash
    python3 pdf-process.py
@@ -89,7 +108,7 @@ python3 -m http.server 3030
   {
     "id": "sample-book",
     "title": "sample book",
-    "cover": "pdf/sample-book-cover.png",
+    "cover": "pdf/sample-book.jpg",
     "pdfUrl": "pdf/sample-book.pdf",
     "pages": 12
   }

@@ -1,0 +1,123 @@
+# mdpress book configuration
+# Docs: https://github.com/yeasy/mdpress
+
+book:
+  title: "성공포르노 자기계발서"
+  subtitle: |
+    40대 찐따 직장인
+    순자산 50억 + 월 천 달성기
+  author: "잔문작가"
+  version: "1.0.0"
+  language: "ko-KR"
+  description: "평범한 40대 직장인이 시스템적 자본주의의 규칙을 깨닫고 순자산 50억과 월 천만 원 파이프라인을 구축한 실전 기록"
+  # A styled cover is generated from the metadata above by default.
+  # cover:
+  #   image: "images/cover.png"  # use a custom cover image
+  #   background: "#102a43"      # override the default cover background color
+
+chapters:
+  # 프롤로그
+  - title: "프롤로그. 40대 무능한 샐러리맨의 자화상과 경고"
+    file: "ch00.md"
+  - title: "통장 잔고와 카드 값이 증명하는 현실"
+    file: "ch00_sec01_bank_account_reality.md"
+  - title: "성실함이라는 가장 거대한 기만"
+    file: "ch00_sec02_illusion_of_diligence.md"
+  - title: "책을 덮는 순간 확정되는 미래"
+    file: "ch00_sec03_determined_future.md"
+
+  # 제1장
+  - title: "제1장. 잔인한 진실: 성실함이 당신을 가난하게 만든다"
+    file: "ch01.md"
+  - title: "월급쟁이의 저주와 노동소득의 한계"
+    file: "ch01_sec01_salary_trap.md"
+  - title: "세금과 인플레이션이 가져가는 은밀한 수탈"
+    file: "ch01_sec02_tax_and_inflation.md"
+  - title: "40대 찐따의 탄생과 무기력의 원인"
+    file: "ch01_sec03_birth_of_loser.md"
+  - title: "낙오자를 기다리는 단 하나의 결말"
+    file: "ch01_sec04_the_only_end.md"
+
+  # 제2장
+  - title: "제2장. 패러다임의 전환: 부의 게임 규칙을 바꾸는 법"
+    file: "ch02.md"
+  - title: "피해자 코스프레라는 안락한 감옥"
+    file: "ch02_sec01_victim_cosplay.md"
+  - title: "무지가 낳는 형벌, 자본맹 탈출하기"
+    file: "ch02_sec02_financial_illiteracy.md"
+  - title: "노동의 종말과 자본 소유의 법칙"
+    file: "ch02_sec03_end_of_work_and_ownership.md"
+  - title: "확률 게임으로서의 경제적 자유"
+    file: "ch02_sec04_game_of_probability.md"
+
+  # 제3장
+  - title: "제3장. 시간 레버리지: 퇴근 후 3시간을 하루 24시간처럼 쓰는 기술"
+    file: "ch03.md"
+  - title: "직장인의 유일한 자산, 저녁 시간의 재정의"
+    file: "ch03_sec01_redefining_evening_time.md"
+  - title: "넷플릭스와 술자리를 끊어내는 단호함"
+    file: "ch03_sec02_cutting_netflix_and_drinking.md"
+  - title: "1일 3파트 타임테이블의 실전 설계"
+    file: "ch03_sec03_three_part_timetable.md"
+
+  # 제4장
+  - title: "제4장. 소득 파이프라인: 월 1,000만 원 무자본 파이프라인 구축"
+    file: "ch04.md"
+  - title: "3대 무자본 파이프라인 설계도"
+    file: "ch04_sec01_cash_pipeline_blueprint.md"
+  - title: "무자본 창업의 정석과 리스크 제로 전략"
+    file: "ch04_sec02_zero_capital_startup.md"
+  - title: "노동 수익과 자본 수익의 비율 역전 프로세스"
+    file: "ch04_sec03_income_ratio_reversal.md"
+  - title: "[실증 사례] 월 280만 원 직장인의 파이프라인 6개월 복제기"
+    file: "ch04_sec04_case_study_pipeline_6months.md"
+
+  # 제5장
+  - title: "제5장. 자산 배분과 레버리지: Fed Put과 상급지 국민평형의 공식"
+    file: "ch05.md"
+  - title: "바이더딥 72시간 룰과 Fed Put의 영원한 진리"
+    file: "ch05_sec01_fed_put_rule.md"
+  - title: "국평 불패 트라이앵글: 서울 상급지 84㎡ 집중 전략"
+    file: "ch05_sec02_84sqm_leverage_triangle.md"
+  - title: "대출 레버리지의 수학적 재무 공학"
+    file: "ch05_sec03_mathematical_financial_engineering.md"
+  - title: "[실증 사례] 빌라 거주 무주택자의 상급지 국평 안착 스토리"
+    file: "ch05_sec04_case_study_upper_class_apartment.md"
+
+  # 제6장
+  - title: "제6장. 실행과 증명: 바닥에서 50억에 도달한 실전 기록"
+    file: "ch06.md"
+  - title: "주변의 만류와 조소를 무시하는 철면피 전략"
+    file: "ch06_sec01_thick_skinned_strategy.md"
+  - title: "안전지대로 회귀하려는 본능 통제하기"
+    file: "ch06_sec02_controlling_comfort_zone_instinct.md"
+  - title: "생각하는 순간 낙오한다, 48시간 내 실행 법칙"
+    file: "ch06_sec03_48_hour_execution_rule.md"
+  - title: "포트폴리오 리밸런싱과 리스크 헤지"
+    file: "ch06_sec04_portfolio_rebalancing_and_hedging.md"
+
+  # 제7장
+  - title: "제7장. 최후의 경고와 확장: 월 1,000만 원과 순자산 50억 이후의 세계"
+    file: "ch07.md"
+  - title: "목표 달성 이후의 허탈감과 두 번째 위기"
+    file: "ch07_sec01_emptiness_and_second_crisis.md"
+  - title: "진짜 시간의 주인이 되는 삶의 구조 개편"
+    file: "ch07_sec02_restructuring_life_as_master_of_time.md"
+
+  # 에필로그
+  - title: "에필로그. 지금 당장 스마트폰을 집어던지고 시작하라"
+    file: "ch08.md"
+  - title: "감동으로 끝나는 독서가 만드는 최후의 낙오"
+    file: "ch08_sec01_reading_without_action_failure.md"
+  - title: "1%의 실행자가 모이는 폐쇄형 커뮤니티로의 초대"
+    file: "ch08_sec02_private_community_invite.md"
+
+style:
+  theme: "elegant"   # technical | elegant | minimal
+  page_size: "A5"
+  custom_css: "custom.css"
+
+output:
+  filename: "성공포르노_자기계발서.pdf"
+  toc: true
+  cover: true

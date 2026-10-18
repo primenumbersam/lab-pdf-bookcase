@@ -48,7 +48,7 @@ h3 {
 }
 
 .neo-header h1 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     margin: 0;
     font-weight: 900;
 }
@@ -74,7 +74,14 @@ h3 {
     transition: transform 0.2s;
 }
 
+.neo-box h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+}
+
 .neo-box p {
+    font-size: 0.9rem;
     line-height: 1.6;
     margin: 0.8rem 0;
 }
@@ -141,10 +148,25 @@ h3 {
     perspective: 1000px;
 }
 
+:root {
+    /* 3D 책 크기 설정 변수 (여기서 수치만 조절하면 3D 좌표와 면들이 자동 계산됨) */
+    --book-width: 160px;
+    /* 책 너비 */
+    --book-height: 250px;
+    /* 책 높이 */
+    --book-thickness: 50px;
+    /* 책 두께(책등 너비) */
+
+    /* 내부 3D 입체 계산용 파생 변수 */
+    --book-half-thickness: calc(var(--book-thickness) / 2);
+    --book-right-tz: calc(var(--book-width) - var(--book-half-thickness));
+    --book-bottom-tz: calc(var(--book-height) - var(--book-half-thickness));
+}
+
 /* 3D Book Styles */
 .book-wrapper {
-    width: 150px;
-    height: 220px;
+    width: var(--book-width);
+    height: var(--book-height);
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.5s ease;
@@ -177,24 +199,24 @@ h3 {
 }
 
 .book-front {
-    width: 150px;
-    height: 220px;
-    transform: translateZ(25px);
+    width: var(--book-width);
+    height: var(--book-height);
+    transform: translateZ(var(--book-half-thickness));
     background-size: cover;
     background-position: center;
 }
 
 .book-back {
-    width: 150px;
-    height: 220px;
-    transform: translateZ(-25px) rotateY(180deg);
+    width: var(--book-width);
+    height: var(--book-height);
+    transform: translateZ(calc(-1 * var(--book-half-thickness))) rotateY(180deg);
     background-color: #333;
 }
 
 .book-spine {
-    width: 50px;
-    height: 220px;
-    transform: rotateY(-90deg) translateZ(25px);
+    width: var(--book-thickness);
+    height: var(--book-height);
+    transform: rotateY(-90deg) translateZ(var(--book-half-thickness));
     background-color: #444;
     /* Fallback color */
     display: flex;
@@ -207,26 +229,24 @@ h3 {
 }
 
 .book-right {
-    width: 50px;
-    height: 220px;
-    transform: rotateY(90deg) translateZ(125px);
-    /* width - spine_width/2 */
+    width: var(--book-thickness);
+    height: var(--book-height);
+    transform: rotateY(90deg) translateZ(var(--book-right-tz));
     background: linear-gradient(to right, #fff 0%, #eee 100%);
     /* Pages effect */
 }
 
 .book-top {
-    width: 150px;
-    height: 50px;
-    transform: rotateX(90deg) translateZ(25px);
+    width: var(--book-width);
+    height: var(--book-thickness);
+    transform: rotateX(90deg) translateZ(var(--book-half-thickness));
     background: linear-gradient(to bottom, #fff 0%, #eee 100%);
 }
 
 .book-bottom {
-    width: 150px;
-    height: 50px;
-    transform: rotateX(-90deg) translateZ(195px);
-    /* height - spine_width/2 */
+    width: var(--book-width);
+    height: var(--book-thickness);
+    transform: rotateX(-90deg) translateZ(var(--book-bottom-tz));
     background: linear-gradient(to bottom, #fff 0%, #eee 100%);
 }
 

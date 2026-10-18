@@ -1,5 +1,10 @@
 // script.js
 
+// PDF.js Worker Configuration
+if (typeof pdfjsLib !== 'undefined') {
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
 // Bookshelf Logic
 async function initBookshelf() {
     const shelf = document.getElementById('shelf');
@@ -12,6 +17,7 @@ async function initBookshelf() {
         books.forEach(book => {
             const bookEl = document.createElement('div');
             bookEl.className = 'book-wrapper';
+
             bookEl.innerHTML = `
                 <div class="book">
                     <div class="book-front" style="background-image: url('${book.cover}')"></div>
@@ -34,16 +40,24 @@ async function initBookshelf() {
                 window.location.href = `viewer.html?book=${book.id}`;
             });
 
+            // Fallback: If cover image is missing, render page 1 via PDF.js as cover thumbnail
+            if (!book.cover && typeof pdfjsLib !== "undefined" && book.pdfUrl) {
+                pdfjsLib.getDocument(book.pdfUrl).promise.then(pdf => pdf.getPage(1)).then(page => {
+                    const viewport = page.getViewport({ scale: 1 });
+                    const canvas = document.createElement("canvas");
+                    canvas.width = viewport.width;
+                    canvas.height = viewport.height;
+                    return page.render({ canvasContext: canvas.getContext("2d"), viewport }).promise.then(() => {
+                        bookEl.querySelector(".book-front").style.backgroundImage = `url(${canvas.toDataURL()})`;
+                    });
+                }).catch(err => console.warn(`Could not render cover for ${book.title}:`, err));
+            }
+
             shelf.appendChild(bookEl);
         });
     } catch (error) {
         console.error('Error loading books:', error);
     }
-}
-
-// PDF.js Worker Configuration
-if (typeof pdfjsLib !== 'undefined') {
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 }
 
 // Viewer Logic with Virtualization

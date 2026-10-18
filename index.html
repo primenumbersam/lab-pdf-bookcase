@@ -10,7 +10,7 @@
 
 <body>
     <header class="neo-header">
-        <h1>3D 책장에 꽂힌 Flip PDF</h1>
+        <h1>딸깍 집필된 PDF 전자책, 3D 책장에 꽂혀서 Flip</h1>
 
     </header>
 
@@ -18,21 +18,22 @@
 
         <section class="intro-section">
             <div class="neo-box description">
-                <h2>반자동 집필은 알아서</h2>
+                <h2>초저가·초고속 "딸깍" 집필</h2>
                 <p>아무말대잔치 전자책 개요 (성공팔이·동기부여) <strong>삽입</strong><br>
                     <code>GenAI</code> 이용한 md 파일 집필 + 커버 이미지 생성 <strong>딸깍</strong><br>
-                    md 파일에서 pdf 파일로 변환 <strong>자동</strong>
+                    <code>mdpress</code> 이용한 md 파일에서 pdf 파일로 <strong>자동</strong> 변환
                 </p>
                 <div class="tags">
                     <span class="neo-tag">채찍피티</span>
                     <span class="neo-tag">잼미니</span>
                     <span class="neo-tag">클났데</span>
+                    <span class="neo-tag">mdpress</span>
                 </div>
             </div>
 
 
             <div class="neo-box">
-                <h2>딸깍 출간은 해줄께</h2>
+                <h2>무료·초경량 "딸깍" 출간</h2>
                 <p>
                     <strong>Flip PDF + 3D Bookshelf,</strong> <br>PDF documents
                     rendered directly in browser with virtualization.
@@ -40,7 +41,7 @@
                 </p>
                 <div class="tags">
                     <span class="neo-tag">PDF.js</span>
-                    <span class="neo-tag">Client Virtualization</span>
+                    <span class="neo-tag">PAGE-FLIP</span>
                     <span class="neo-tag">CSS 3D</span>
                 </div>
             </div>
@@ -77,6 +78,8 @@
         </p>
     </footer>
     <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+    <!-- PDF.js CDN (Needed for auto-generating cover thumbnails when no cover image is provided) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script src="script.js"></script>
 </body>
 

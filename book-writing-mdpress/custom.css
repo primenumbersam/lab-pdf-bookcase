@@ -1,0 +1,130 @@
+/* 장 간지(도비라) 페이지: 상하좌우 가운데 정렬 및 딱 1페이지만 차지 */
+article.chapter:has(.part-divider) .chapter-title,
+div.chapter:has(.part-divider) .chapter-title {
+  display: none !important;
+}
+
+article.chapter:has(.part-divider),
+div.chapter:has(.part-divider) {
+  min-height: calc(100vh - 50mm) !important;
+  height: calc(100vh - 50mm) !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  page-break-before: always !important;
+  page-break-after: always !important;
+  break-before: page !important;
+  break-after: page !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.part-divider {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.part-divider-text {
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  color: var(--color-heading, #12344D) !important;
+  word-break: keep-all !important;
+}
+
+/* 표지 타이틀 및 서브타이틀 줄바꿈 및 크기 최적화 (.cover-subtitle이 PDF 기본 표지 클래스) */
+.cover-title,
+.cover-hero-title {
+  word-break: keep-all !important;
+  font-size: 32px !important;
+  line-height: 1.3 !important;
+}
+
+.cover-subtitle,
+.cover-hero-subtitle {
+  white-space: pre-line !important;
+  word-break: keep-all !important;
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+}
+
+
+/* ============================================================
+   목차 (TOC) 폰트 및 여백 조절
+   ============================================================ */
+/* 상단 '목차' 타이틀 */
+.toc-title {
+  font-size: 18px !important;
+  margin-bottom: 24px !important;
+  text-align: center !important;
+}
+
+/* 각 항목 텍스트 */
+.toc-entry-title {
+  font-size: 10px !important;
+  /* 원하는 목차 글자 크기 */
+  line-height: 1.6 !important;
+}
+
+/* 우측 페이지 번호 */
+.toc-pageno {
+  font-size: 10px !important;
+  /* 원하는 페이지 번호 크기 */
+}
+
+/* 목차 줄 간격 조절 */
+.toc li {
+  margin: 0.25rem 0 !important;
+}
+
+
+/* ============================================================
+   본문 헤딩 (Heading) 크기 조절
+   ============================================================ */
+.chapter-title {
+  font-size: 22px !important;
+  /* 장/절 시작 헤더 (H1) */
+  line-height: 1.35 !important;
+  margin-bottom: 24px !important;
+}
+
+.chapter-content h2 {
+  font-size: 17px !important;
+  /* 본문 중제목 (##) */
+  margin-top: 30px !important;
+  margin-bottom: 12px !important;
+  line-height: 1.4 !important;
+}
+
+.chapter-content h3 {
+  font-size: 15px !important;
+  /* 본문 소제목 (###) */
+  margin-top: 22px !important;
+  margin-bottom: 8px !important;
+}
+
+/* ============================================================
+   본문 텍스트 (Paragraph, List) 조절
+   ============================================================ */
+.chapter-content p,
+.chapter-content li {
+  font-size: 10.5pt !important;
+  /* A5 단행본 표준 본문 크기 (10pt ~ 11pt) */
+  line-height: 1.75 !important;
+  /* 편안한 가독성을 위한 줄간격 (1.7 ~ 1.8) */
+  letter-spacing: -0.02em !important;
+  /* 한글 자간 밀착 */
+  word-break: keep-all !important;
+  /* 단어 중간 줄바꿈 방지 */
+}
+
+.chapter-content p {
+  margin-bottom: 12px !important;
+  /* 문단 간 여백 */
+}
